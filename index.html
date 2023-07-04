@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+</head>
+<body>
+    <div class="hero">
+    <div class="container">
+        <div class="left">
+            <h2 id="date"></h2>
+            <p id="day"></p>
+        </div>
+        <div class="right">
+            <p id="month"></p>
+            <h2 id="year"></h2>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+
+    const a = new Date();
+    let date = document.getElementById("date");
+    let day = document.getElementById("day");
+    let month =document.getElementById("month");
+    let year = document.getElementById("year");
+
+    let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct","Nov", "Dec"]
+    
+    date.innerHTML= (a.getDate() < 10 ? "0":"" )+ a.getDate();
+    day.innerHTML = weekDays[a.getDay()];
+    month.innerHTML = months[a.getMonth()];
+    year.innerHTML = a.getFullYear();
+
+</script>
+</html>
